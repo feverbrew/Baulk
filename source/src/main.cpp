@@ -1,8 +1,8 @@
-#include<SDL2/SDL.h>
+#include <SDL2/SDL.h>
 
-#include "graphics.h"
+#include "game.h"
 
 int main(int arg, const char* argv[]){
-    Graphics graphics;
+    Game game;
     return 0;
 }
