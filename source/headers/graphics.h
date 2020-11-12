@@ -12,7 +12,7 @@ public:
     Graphics();
     ~Graphics();
 
-    SDL_Surface* loadimage(const std::string &filepath);
+    SDL_Surface* loadImage(const std::string &filepath);
 
     // Draws a texture to a certain part of the screen
     void blitSurface(SDL_Texture* source, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle);
@@ -29,6 +29,7 @@ private:
     // Every frame, we clear the renderer, draw textures, then flip to draw them on the screen
     SDL_Renderer* _renderer;
 
+    std::map<std::string, SDL_Surface*> _spriteSheets;
 };
 
 #endif

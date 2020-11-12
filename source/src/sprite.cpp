@@ -12,9 +12,9 @@ Sprite::Sprite(Graphics &graphics, const std::string &filepath, int sourceX, int
     this->_sourceRect.w = width;
     this->_sourceRect.h = height;
 
-    this->_spriteSheet = SDL_CreateTextureFromSurface(graphics.getRenderer(), graphics.loadimage(filepath));
+    this->_spriteSheet = SDL_CreateTextureFromSurface(graphics.getRenderer(), graphics.loadImage(filepath));
     if(this->_spriteSheet == NULL){
-        printf("\nError, unable to load image\n")
+        printf("\nError, unable to load image\n");
     }
 }
 
