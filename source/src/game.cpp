@@ -23,7 +23,9 @@ void Game::gameLoop(){
     Input input;
     SDL_Event event;
 
-    this->_player = Sprite(graphics,"./source/spritesheets/s1.png",0,0,32,32,100,100); //ok we need a model here, I could include just a filler but probably could start working on the art.
+    this->_player = AnimatedSprite(graphics,"source/spritesheets/s1.png",0,0,32,32,100,100,100); //ok we need a model here, I could include just a filler but probably could start working on the art.
+    this->_player.setupAnimations();
+    this->_player.playAnimation("run");
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
     while(true){
@@ -64,5 +66,5 @@ void Game::draw(Graphics &graphics){
 }
 
 void Game::update(float elapsedTime){
-
+    this->_player.update(elapsedTime);
 }
